@@ -18,6 +18,18 @@ repositories {
             includeGroup("maven.modrinth")
         }
     }
+
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "CurseMaven"
+                url = uri("https://cursemaven.com")
+            }
+        }
+        filter {
+            includeGroup("curse.maven")
+        }
+    }
 }
 
 dependencies {

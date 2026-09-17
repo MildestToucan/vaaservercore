@@ -9,17 +9,17 @@ fabricLoom = "1.17-SNAPSHOT"
 fabricLoader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricLoader" }
 fabricApi = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabricApi" }
 
-# Modrinth : We use Modrinth Maven to ensure absolute parity with the stuff modpack players will download
+# We use Modrinth Maven and CurseMaven to ensure absolute parity with the stuff modpack players will download
 ## Optimization
 ferriteCore = "maven.modrinth:uXXizFIs:d5ddUdiB" # version 9.0.0-fabric
 lithium = "maven.modrinth:gvQqBUqZ:f7vZ0VWU" # version mc26.2-0.25.3-fabric
 krypton = "maven.modrinth:fQEb0iXm:5WeL0Nkz" # version 0.3.1
-modernfixMVUS = "maven.modrinth:TjSm1wrD:TUWH6NZu" # version 5.27.19-build.1
 
 ## Non-Core QOL : Things that werent asked for, but I decided to add as a developer liberty
 appleskin = "maven.modrinth:EsAfCjCV:uo5bAN1Y" # version 3.0.10+mc26.2
 comforts = "maven.modrinth:SaCpeal4:FBaK3TtW" # version [16.0.0+26.2] - 2026.06.22
 qomc = "maven.modrinth:uwv2nlpZ:BQHiDSSD" # version 1.1.0+26.1-fabric
+reliableRecipeViewer = "maven.modrinth:5VolwT6c:oNWwPKuf" # version 8.10.5+26.2-fabric
 
 ## Core mods of the modpack
 ### Macaw's stuff
@@ -50,6 +50,9 @@ dontMeltMySnowyBuilds = "maven.modrinth:9KEHzdDn:MqsAy39T" # version 1.0.0+26.2
 ### Simple Voice Chat
 simpleVC = "maven.modrinth:9eGKb6K1:JDkcoyAy" # version fabric-2.6.23+26.2
 
+### Ribbits
+ribbitsUpdated = "curse.maven:ribbits-updated-1692353:8871284"
+
 ## Misc. Deps
 terraBlender = "maven.modrinth:kkmrDlKT:KQix25Qc" # version 26.2.0.0.2
 addonsApi = "maven.modrinth:cl5ec0Qm:1jpMrkEZ" # version 26.2-1.0
@@ -58,14 +61,15 @@ glitchCore = "maven.modrinth:s3dmwKy5:SDUCBYRU" # version 26.2.0.0.0
 shogi = "maven.modrinth:bi4iCmsw:EgXnCQjN" # version 26.2.0.5
 balm = "maven.modrinth:MBAkmtvl:LcKC6Cxw" # version 26.2.0.8+fabric-26.2
 forgeConfigAPIPort = "maven.modrinth:ohNO6lps:rSd3GiG8" # version 26.2.1
+geckoLib = "maven.modrinth:8BmcQJ2H:7gaQHok7" # version GeckoLib v5.5.5
 
 [bundles]
 fabricModding = ["fabricApi", "fabricLoader"]
 macaws = ["macawsBiomesOPlenty", "macawsDoors", "macawsFences", "macawsFurniture", "macawsWindows"]
-serverOpt = ["lithium", "krypton", "ferriteCore", "modernfixMVUS"]
-miscDeps = ["terraBlender", "addonsApi", "serilumCollective", "glitchCore", "shogi", "balm", "forgeConfigAPIPort"]
-miscCore = ["dontMeltMySnowyBuilds", "farmersDelightRefab", "waystones", "travelersBackpack", "serilumsTreeHarvester", "biomesOPlenty", "simpleVC"]
-nonCore = ["appleskin", "comforts", "qomc"]
+serverOpt = ["lithium", "krypton", "ferriteCore"]
+miscDeps = ["terraBlender", "addonsApi", "serilumCollective", "glitchCore", "shogi", "balm", "forgeConfigAPIPort", "geckoLib"]
+miscCore = ["dontMeltMySnowyBuilds", "farmersDelightRefab", "waystones", "travelersBackpack", "serilumsTreeHarvester", "biomesOPlenty", "simpleVC", "ribbitsUpdated"]
+nonCore = ["appleskin", "comforts", "qomc", "reliableRecipeViewer"]
 
 [plugins]
 loomVersion = { id = "net.fabricmc.fabric-loom", version.ref = "fabricLoom" }
