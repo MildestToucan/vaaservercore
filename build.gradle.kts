@@ -23,6 +23,11 @@ repositories {
 dependencies {
     minecraft("com.mojang:minecraft:${libs.versions.minecraft.get()}")
     implementation(libs.bundles.fabricModding)
+    implementation(libs.bundles.macaws)
+    implementation(libs.bundles.miscCore)
+    implementation(libs.bundles.miscDeps)
+    implementation(libs.bundles.nonCore)
+    implementation(libs.bundles.serverOpt)
 }
 
 tasks.processResources {

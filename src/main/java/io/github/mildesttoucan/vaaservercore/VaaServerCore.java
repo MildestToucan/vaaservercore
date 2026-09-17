@@ -7,22 +7,31 @@ import net.minecraft.resources.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class VaaServerCore implements ModInitializer {
+public final class VaaServerCore implements ModInitializer {
 	public static final String MOD_ID = "vaaservercore";
 
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+        simpleDebug("Initializing vaaservercore");
 	}
+
+    public static void simpleInfo(String message) {
+        LOGGER.info(message);
+    }
+
+    public static void simpleWarn(String message) {
+        LOGGER.warn(message);
+    }
+
+    public static void simpleError(String message) {
+        LOGGER.error(message);
+    }
+
+    public static void simpleDebug(String message) {
+        LOGGER.debug(message);
+    }
 
 	public static Identifier id(String path) {
 		return Identifier.fromNamespaceAndPath(MOD_ID, path);

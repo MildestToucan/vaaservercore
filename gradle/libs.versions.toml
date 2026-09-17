@@ -9,10 +9,63 @@ fabricLoom = "1.17-SNAPSHOT"
 fabricLoader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricLoader" }
 fabricApi = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabricApi" }
 
-# Modrinth
+# Modrinth : We use Modrinth Maven to ensure absolute parity with the stuff modpack players will download
+## Optimization
+ferriteCore = "maven.modrinth:uXXizFIs:d5ddUdiB" # version 9.0.0-fabric
+lithium = "maven.modrinth:gvQqBUqZ:f7vZ0VWU" # version mc26.2-0.25.3-fabric
+krypton = "maven.modrinth:fQEb0iXm:5WeL0Nkz" # version 0.3.1
+modernfixMVUS = "maven.modrinth:TjSm1wrD:TUWH6NZu" # version 5.27.19-build.1
+
+## Non-Core QOL : Things that werent asked for, but I decided to add as a developer liberty
+appleskin = "maven.modrinth:EsAfCjCV:uo5bAN1Y" # version 3.0.10+mc26.2
+comforts = "maven.modrinth:SaCpeal4:FBaK3TtW" # version [16.0.0+26.2] - 2026.06.22
+qomc = "maven.modrinth:uwv2nlpZ:BQHiDSSD" # version 1.1.0+26.1-fabric
+
+## Core mods of the modpack
+### Macaw's stuff
+macawsFurniture = "maven.modrinth:dtWC90iB:ptL25rVF" # version 3.4.1
+macawsDoors = "maven.modrinth:kNxa8z3e:XxNfkmgt" # version 1.1.5
+macawsWindows = "maven.modrinth:C7I0BCni:sNXCQQn1" # version 2.4.2
+macawsFences = "maven.modrinth:GmwLse2I:95mwakGs" # version 1.2.1
+macawsBiomesOPlenty = "maven.modrinth:Tanquv9C:s9f1oDQu" # version 26.2-1.6
+
+### Farmer's Delight: Refab
+farmersDelightRefab = "maven.modrinth:7vxePowz:35H2kGP9" # version 26.2-3.6.25
+
+### Waystones
+waystones = "maven.modrinth:LOpKHB2A:HUacBshD" # version 26.2.0.12+fabric-26.2
+
+### Backpack
+travelersBackpack = "maven.modrinth:rlloIFEV:jp51VM8M" # version 26.2-11.3.2
+
+### Tree Chopper
+serilumsTreeHarvester = "maven.modrinth:abooMhox:3VcDfhZP" # version 26.2.0-9.4-fabric+forge+neo
+
+### Biomes O Plenty
+biomesOPlenty = "maven.modrinth:HXF82T3G:MNZPk6V0" # version 26.2.0.0.28
+
+### Don't Melt My Snowy Builds (mine heehee)
+dontMeltMySnowyBuilds = "maven.modrinth:9KEHzdDn:MqsAy39T" # version 1.0.0+26.2
+
+### Simple Voice Chat
+simpleVC = "maven.modrinth:9eGKb6K1:JDkcoyAy" # version fabric-2.6.23+26.2
+
+## Misc. Deps
+terraBlender = "maven.modrinth:kkmrDlKT:KQix25Qc" # version 26.2.0.0.2
+addonsApi = "maven.modrinth:cl5ec0Qm:1jpMrkEZ" # version 26.2-1.0
+serilumCollective = "maven.modrinth:e0M1UDsY:M75JwjyS" # version 26.2.0-8.39-fabric+forge+neo
+glitchCore = "maven.modrinth:s3dmwKy5:SDUCBYRU" # version 26.2.0.0.0
+shogi = "maven.modrinth:bi4iCmsw:EgXnCQjN" # version 26.2.0.5
+balm = "maven.modrinth:MBAkmtvl:LcKC6Cxw" # version 26.2.0.8+fabric-26.2
+forgeConfigAPIPort = "maven.modrinth:ohNO6lps:rSd3GiG8" # version 26.2.1
 
 [bundles]
 fabricModding = ["fabricApi", "fabricLoader"]
+macaws = ["macawsBiomesOPlenty", "macawsDoors", "macawsFences", "macawsFurniture", "macawsWindows"]
+serverOpt = ["lithium", "krypton", "ferriteCore", "modernfixMVUS"]
+miscDeps = ["terraBlender", "addonsApi", "serilumCollective", "glitchCore", "shogi", "balm", "forgeConfigAPIPort"]
+miscCore = ["dontMeltMySnowyBuilds", "farmersDelightRefab", "waystones", "travelersBackpack", "serilumsTreeHarvester", "biomesOPlenty", "simpleVC"]
+nonCore = ["appleskin", "comforts", "qomc"]
 
 [plugins]
 loomVersion = { id = "net.fabricmc.fabric-loom", version.ref = "fabricLoom" }
