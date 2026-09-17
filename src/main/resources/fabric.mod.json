@@ -1,0 +1,31 @@
+{
+	"schemaVersion": 1,
+	"id": "vaaservercore",
+	"version": "${version}",
+	"name": "VaaServerCore",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"GauntRecluse"
+	],
+	"contact": {
+		"homepage": "https://github.com/MildestToucan/",
+		"sources": "https://github.com/MildestToucan/"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/vaaservercore/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"io.github.mildesttoucan.vaaservercore.VaaServerCore"
+		]
+	},
+	"mixins": [
+		"vaaservercore.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
